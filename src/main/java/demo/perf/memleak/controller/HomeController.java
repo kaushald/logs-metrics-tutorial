@@ -41,6 +41,8 @@ public class HomeController {
             uid = UUID.randomUUID();
         }
 
+        log.info("Recieved Request with uid: {}", uid);
+
         String str = getResourceFileAsString("large-file.txt");
         str.intern();
 
