@@ -23,8 +23,8 @@ After installing all of the above tools, open Windows PowerShell as Administrato
 
 ```shell
 git config --global core.autocrlf false
-git clone https://github.com/kaushald/perftest-leakyserver.git
-cd perftest-leakyserver
+git clone https://github.com/kaushald/logs-metrics-tutorial.git
+cd logs-metrics-tutorial
 ```
 
 ### Build and run the project
@@ -48,6 +48,20 @@ You can then view these dashboards:
 
 - [App Stats Dashboard](http://localhost:3000/d/17kOE7Onk/spring-boot-app?orgId=1&refresh=30s&from=now-15m&to=now)
 - [Prometheus Stats Dashboard](http://localhost:3000/d/UDdpyzz7z/prometheus-stats?orgId=1&refresh=5s&from=now-15m&to=now)
+- [K6 Load Test Results](http://localhost:3000/d/Jupmw7_nz/k6-load-testing-results?orgId=1&refresh=5s&from=now-15m&to=now)
+
+### Kibana
+
+- [Login to Kibana at this link](http://127.0.0.1:5601/) with these credentials
+
+```
+user: elastic
+pass: changeme
+```
+
+You can then view the logs here:
+
+- [Kibana Discover Logs](<http://localhost:5601/app/discover#/?_g=(filters:!(),refreshInterval:(pause:!t,value:0),time:(from:now-30m,to:now))&_a=(columns:!(),filters:!(),index:'logs-*',interval:auto,query:(language:kuery,query:''),sort:!(!('@timestamp',desc)))>)
 
 ## Running on macOS
 
@@ -64,8 +78,8 @@ The following need to be installed on your system:
 After installing all of the above tools, open a terminal and run the following commands:
 
 ```shell
-git clone https://github.com/kaushald/perftest-leakyserver.git
-cd perftest-leakyserver
+git clone https://github.com/kaushald/logs-metrics-tutorial.git
+cd logs-metrics-tutorial
 ```
 
 ### Build and run the project
@@ -169,8 +183,8 @@ The following need to be installed on your system:
 After installing all of the above tools, open a terminal and run the following commands:
 
 ```shell
-git clone https://github.com/kaushald/perftest-leakyserver.git
-cd perftest-leakyserver
+git clone https://github.com/kaushald/logs-metrics-tutorial.git
+cd logs-metrics-tutorial
 ```
 
 ### Build and run the project
