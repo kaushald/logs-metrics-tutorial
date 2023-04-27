@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -19,7 +22,10 @@
         "type": "dashboard"
       },
       {
-        "datasource": "prom1",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "6AwMxn_7k"
+        },
         "enable": true,
         "expr": "resets(process_uptime_seconds{application=\"$application\", instance=\"$instance\"}[1m]) > 0",
         "iconColor": "rgba(255, 96, 96, 1)",
@@ -37,13 +43,15 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 4701,
   "graphTooltip": 1,
-  "iteration": 1634333864460,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -52,13 +60,23 @@
       },
       "id": 125,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Quick Facts",
       "type": "row"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -100,7 +118,6 @@
         "y": 1
       },
       "id": 63,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -118,9 +135,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "process_uptime_seconds{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -134,8 +155,10 @@
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -176,7 +199,6 @@
         "y": 1
       },
       "id": 92,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -194,9 +216,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "process_start_time_seconds{application=\"$application\", instance=\"$instance\"}*1000",
           "format": "time_series",
           "intervalFactor": 2,
@@ -210,8 +236,10 @@
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -257,7 +285,6 @@
         "y": 1
       },
       "id": 65,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -275,9 +302,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\", area=\"heap\"})*100/sum(jvm_memory_max_bytes{application=\"$application\",instance=\"$instance\", area=\"heap\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -290,8 +321,10 @@
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -347,7 +380,6 @@
         "y": 1
       },
       "id": 75,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -365,9 +397,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\", area=\"nonheap\"})*100/sum(jvm_memory_max_bytes{application=\"$application\",instance=\"$instance\", area=\"nonheap\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -381,7 +417,10 @@
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -390,7 +429,15 @@
       },
       "id": 126,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "I/O Overview",
       "type": "row"
     },
@@ -399,7 +446,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -427,7 +477,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -437,6 +487,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(rate(http_server_requests_seconds_count{application=\"$application\", instance=\"$instance\"}[1m]))",
           "format": "time_series",
           "intervalFactor": 1,
@@ -445,9 +499,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Rate",
       "tooltip": {
         "shared": true,
@@ -456,34 +508,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
-          "decimals": null,
           "format": "ops",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -494,7 +537,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -522,7 +568,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -532,6 +578,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(rate(http_server_requests_seconds_count{application=\"$application\", instance=\"$instance\", status=~\"5..\"}[1m]))",
           "format": "time_series",
           "intervalFactor": 1,
@@ -540,9 +590,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Errors",
       "tooltip": {
         "shared": true,
@@ -551,34 +599,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
-          "decimals": null,
           "format": "ops",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -586,7 +625,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -614,7 +656,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -624,6 +666,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(rate(http_server_requests_seconds_sum{application=\"$application\", instance=\"$instance\", status!~\"5..\"}[1m]))/sum(rate(http_server_requests_seconds_count{application=\"$application\", instance=\"$instance\", status!~\"5..\"}[1m]))",
           "format": "time_series",
           "hide": false,
@@ -632,6 +678,10 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "max(http_server_requests_seconds_max{application=\"$application\", instance=\"$instance\", status!~\"5..\"})",
           "format": "time_series",
           "hide": false,
@@ -641,9 +691,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Duration",
       "tooltip": {
         "shared": true,
@@ -652,33 +700,25 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "s",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -686,7 +726,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "description": "",
       "fill": 1,
       "fillGradient": 0,
@@ -716,7 +759,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -726,6 +769,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "tomcat_threads_busy_threads{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -734,6 +781,10 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "tomcat_threads_current_threads{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -742,6 +793,10 @@
           "refId": "B"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "tomcat_threads_config_max_threads{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -750,6 +805,10 @@
           "refId": "C"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jetty_threads_busy{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -758,6 +817,10 @@
           "refId": "D"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jetty_threads_current{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -766,6 +829,10 @@
           "refId": "E"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jetty_threads_config_max{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -775,9 +842,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Utilisation",
       "tooltip": {
         "shared": true,
@@ -786,38 +851,33 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -826,7 +886,15 @@
       },
       "id": 127,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "JVM Memory",
       "type": "row"
     },
@@ -835,18 +903,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -873,7 +940,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -883,6 +950,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\", area=\"heap\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -892,6 +963,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_committed_bytes{application=\"$application\", instance=\"$instance\", area=\"heap\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -900,6 +975,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_max_bytes{application=\"$application\", instance=\"$instance\", area=\"heap\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -909,9 +988,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "JVM Heap",
       "tooltip": {
         "msResolution": false,
@@ -922,9 +999,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -936,24 +1011,18 @@
       "yaxes": [
         {
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -961,18 +1030,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -999,7 +1067,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1009,6 +1077,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\", area=\"nonheap\"})",
           "format": "time_series",
           "interval": "",
@@ -1019,6 +1091,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_committed_bytes{application=\"$application\", instance=\"$instance\", area=\"nonheap\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1027,6 +1103,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_max_bytes{application=\"$application\", instance=\"$instance\", area=\"nonheap\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1036,9 +1116,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "JVM Non-Heap",
       "tooltip": {
         "msResolution": false,
@@ -1049,9 +1127,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1063,24 +1139,18 @@
       "yaxes": [
         {
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1088,18 +1158,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -1127,7 +1196,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1137,6 +1206,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1146,6 +1219,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_committed_bytes{application=\"$application\", instance=\"$instance\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1154,6 +1231,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "sum(jvm_memory_max_bytes{application=\"$application\", instance=\"$instance\"})",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1163,9 +1244,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "JVM Total",
       "tooltip": {
         "msResolution": false,
@@ -1176,9 +1255,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1192,22 +1269,17 @@
           "format": "bytes",
           "label": "",
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1215,18 +1287,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -1253,7 +1324,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1263,6 +1334,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "process_memory_vss_bytes{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": true,
@@ -1273,6 +1348,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "process_memory_rss_bytes{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1280,6 +1359,10 @@
           "refId": "B"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "process_memory_swap_bytes{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1287,6 +1370,10 @@
           "refId": "C"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "process_memory_rss_bytes{application=\"$application\", instance=\"$instance\"} + process_memory_swap_bytes{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1295,9 +1382,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "JVM Process Memory",
       "tooltip": {
         "msResolution": false,
@@ -1308,9 +1393,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1324,27 +1407,25 @@
           "format": "bytes",
           "label": "",
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -1353,7 +1434,15 @@
       },
       "id": 128,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "JVM Misc",
       "type": "row"
     },
@@ -1362,18 +1451,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -1400,7 +1488,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1410,6 +1498,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "system_cpu_usage{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -1420,6 +1512,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "process_cpu_usage{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -1428,6 +1524,10 @@
           "refId": "B"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "avg_over_time(process_cpu_usage{application=\"$application\", instance=\"$instance\"}[1h])",
           "format": "time_series",
           "hide": false,
@@ -1437,9 +1537,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "CPU Usage",
       "tooltip": {
         "msResolution": false,
@@ -1450,9 +1548,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1473,16 +1569,12 @@
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1490,18 +1582,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -1528,7 +1619,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1538,6 +1629,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "system_load_average_1m{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1547,6 +1642,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "system_cpu_count{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1555,9 +1654,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Load",
       "tooltip": {
         "msResolution": false,
@@ -1568,9 +1665,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1585,22 +1680,17 @@
           "format": "short",
           "label": "",
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1608,18 +1698,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -1646,7 +1735,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1656,6 +1745,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_threads_live_threads{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1665,6 +1758,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_threads_daemon_threads{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1674,6 +1771,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_threads_peak_threads{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1682,6 +1783,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "process_threads{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "interval": "",
@@ -1692,9 +1797,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Threads",
       "tooltip": {
         "msResolution": false,
@@ -1705,9 +1808,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1720,24 +1821,18 @@
         {
           "decimals": 0,
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1752,7 +1847,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -1782,7 +1880,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1792,6 +1890,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_threads_states_threads{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -1800,9 +1902,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Thread States",
       "tooltip": {
         "shared": true,
@@ -1811,33 +1911,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1851,18 +1942,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -1894,7 +1984,7 @@
         "alertThreshold": true
       },
       "percentage": true,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1913,6 +2003,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "increase(logback_events_total{application=\"$application\", instance=\"$instance\"}[1m])",
           "format": "time_series",
           "interval": "",
@@ -1924,9 +2018,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Log Events",
       "tooltip": {
         "msResolution": false,
@@ -1937,9 +2029,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -1952,24 +2042,18 @@
         {
           "decimals": 0,
           "format": "opm",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -1977,18 +2061,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -2015,7 +2098,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2025,6 +2108,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "process_files_open_files{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -2035,6 +2122,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "process_files_max_files{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -2046,9 +2137,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "File Descriptors",
       "tooltip": {
         "msResolution": false,
@@ -2059,9 +2148,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -2074,29 +2161,26 @@
         {
           "decimals": 0,
           "format": "short",
-          "label": null,
           "logBase": 10,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2106,6 +2190,15 @@
       "id": 129,
       "panels": [],
       "repeat": "persistence_counts",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "JVM Memory Pools (Heap)",
       "type": "row"
     },
@@ -2114,18 +2207,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -2155,7 +2247,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2166,6 +2258,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\", id=~\"$jvm_memory_pool_heap\"}",
           "format": "time_series",
           "hide": false,
@@ -2177,6 +2273,10 @@
           "step": 1800
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_memory_committed_bytes{application=\"$application\", instance=\"$instance\", id=~\"$jvm_memory_pool_heap\"}",
           "format": "time_series",
           "hide": false,
@@ -2188,6 +2288,10 @@
           "step": 1800
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_memory_max_bytes{application=\"$application\", instance=\"$instance\", id=~\"$jvm_memory_pool_heap\"}",
           "format": "time_series",
           "hide": false,
@@ -2200,9 +2304,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "$jvm_memory_pool_heap",
       "tooltip": {
         "msResolution": false,
@@ -2213,9 +2315,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -2227,29 +2327,26 @@
       "yaxes": [
         {
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2258,7 +2355,15 @@
       },
       "id": 130,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "JVM Memory Pools (Non-Heap)",
       "type": "row"
     },
@@ -2267,18 +2372,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -2308,7 +2412,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2319,6 +2423,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_memory_used_bytes{application=\"$application\", instance=\"$instance\", id=~\"$jvm_memory_pool_nonheap\"}",
           "format": "time_series",
           "hide": false,
@@ -2330,6 +2438,10 @@
           "step": 1800
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_memory_committed_bytes{application=\"$application\", instance=\"$instance\", id=~\"$jvm_memory_pool_nonheap\"}",
           "format": "time_series",
           "hide": false,
@@ -2341,6 +2453,10 @@
           "step": 1800
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_memory_max_bytes{application=\"$application\", instance=\"$instance\", id=~\"$jvm_memory_pool_nonheap\"}",
           "format": "time_series",
           "hide": false,
@@ -2353,9 +2469,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "$jvm_memory_pool_nonheap",
       "tooltip": {
         "msResolution": false,
@@ -2366,9 +2480,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -2380,29 +2492,26 @@
       "yaxes": [
         {
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2411,7 +2520,15 @@
       },
       "id": 131,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Garbage Collection",
       "type": "row"
     },
@@ -2420,7 +2537,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2448,7 +2568,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2458,6 +2578,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "rate(jvm_gc_pause_seconds_count{application=\"$application\", instance=\"$instance\"}[1m])",
           "format": "time_series",
           "hide": false,
@@ -2467,9 +2591,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Collections",
       "tooltip": {
         "shared": true,
@@ -2478,18 +2600,14 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "ops",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
@@ -2497,14 +2615,11 @@
           "format": "short",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2512,7 +2627,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2540,7 +2658,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2550,6 +2668,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "rate(jvm_gc_pause_seconds_sum{application=\"$application\", instance=\"$instance\"}[1m])/rate(jvm_gc_pause_seconds_count{application=\"$application\", instance=\"$instance\"}[1m])",
           "format": "time_series",
           "hide": false,
@@ -2559,6 +2681,10 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_gc_pause_seconds_max{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "hide": false,
@@ -2569,9 +2695,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Pause Durations",
       "tooltip": {
         "shared": true,
@@ -2580,18 +2704,14 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "s",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
@@ -2599,14 +2719,11 @@
           "format": "short",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2614,7 +2731,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -2642,7 +2762,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2652,6 +2772,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "rate(jvm_gc_memory_allocated_bytes_total{application=\"$application\", instance=\"$instance\"}[1m])",
           "format": "time_series",
           "interval": "",
@@ -2660,6 +2784,10 @@
           "refId": "A"
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "rate(jvm_gc_memory_promoted_bytes_total{application=\"$application\", instance=\"$instance\"}[1m])",
           "format": "time_series",
           "interval": "",
@@ -2669,9 +2797,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Allocated/Promoted",
       "tooltip": {
         "shared": true,
@@ -2680,38 +2806,33 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "Bps",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": "0",
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2720,7 +2841,15 @@
       },
       "id": 132,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Classloading",
       "type": "row"
     },
@@ -2729,18 +2858,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -2767,7 +2895,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2777,6 +2905,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_classes_loaded_classes{application=\"$application\", instance=\"$instance\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -2787,9 +2919,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Classes loaded",
       "tooltip": {
         "msResolution": false,
@@ -2800,9 +2930,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -2814,24 +2942,18 @@
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -2839,18 +2961,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -2877,7 +2998,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -2887,6 +3008,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "delta(jvm_classes_loaded_classes{application=\"$application\",instance=\"$instance\"}[1m])",
           "format": "time_series",
           "hide": false,
@@ -2899,9 +3024,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Class delta",
       "tooltip": {
         "msResolution": false,
@@ -2912,9 +3035,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -2925,31 +3046,27 @@
       ],
       "yaxes": [
         {
-          "decimals": null,
           "format": "short",
           "label": "",
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "gridPos": {
         "h": 1,
         "w": 24,
@@ -2958,7 +3075,15 @@
       },
       "id": 133,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Buffer Pools",
       "type": "row"
     },
@@ -2967,18 +3092,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -3005,7 +3129,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3015,6 +3139,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_buffer_memory_used_bytes{application=\"$application\", instance=\"$instance\", id=\"direct\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -3024,6 +3152,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_buffer_total_capacity_bytes{application=\"$application\", instance=\"$instance\", id=\"direct\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -3034,9 +3166,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Direct Buffers",
       "tooltip": {
         "msResolution": false,
@@ -3047,9 +3177,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -3061,24 +3189,18 @@
       "yaxes": [
         {
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -3086,18 +3208,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -3124,7 +3245,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3134,6 +3255,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_buffer_count_buffers{application=\"$application\", instance=\"$instance\", id=\"direct\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -3144,9 +3269,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Direct Buffers",
       "tooltip": {
         "msResolution": false,
@@ -3157,9 +3280,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -3172,24 +3293,18 @@
         {
           "decimals": 0,
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -3197,18 +3312,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -3235,7 +3349,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3245,6 +3359,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_buffer_memory_used_bytes{application=\"$application\", instance=\"$instance\", id=\"mapped\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -3254,6 +3372,10 @@
           "step": 2400
         },
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_buffer_total_capacity_bytes{application=\"$application\", instance=\"$instance\", id=\"mapped\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -3264,9 +3386,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Mapped Buffers",
       "tooltip": {
         "msResolution": false,
@@ -3277,9 +3397,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -3291,24 +3409,18 @@
       "yaxes": [
         {
           "format": "bytes",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -3316,18 +3428,17 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "prom1",
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
+      },
       "editable": true,
       "error": false,
       "fill": 1,
       "fillGradient": 0,
       "grid": {
         "leftLogBase": 1,
-        "leftMax": null,
-        "leftMin": null,
-        "rightLogBase": 1,
-        "rightMax": null,
-        "rightMin": null
+        "rightLogBase": 1
       },
       "gridPos": {
         "h": 7,
@@ -3354,7 +3465,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -3364,6 +3475,10 @@
       "steppedLine": false,
       "targets": [
         {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
           "expr": "jvm_buffer_count_buffers{application=\"$application\", instance=\"$instance\", id=\"mapped\"}",
           "format": "time_series",
           "intervalFactor": 2,
@@ -3374,9 +3489,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Mapped Buffers",
       "tooltip": {
         "msResolution": false,
@@ -3387,9 +3500,7 @@
       "type": "graph",
       "x-axis": true,
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
@@ -3402,45 +3513,39 @@
         {
           "decimals": 0,
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
           "min": 0,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     }
   ],
-  "refresh": "30s",
-  "schemaVersion": 31,
+  "refresh": "5s",
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
           "isNone": true,
           "selected": false,
           "text": "None",
           "value": ""
         },
-        "datasource": "prom1",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "6AwMxn_7k"
+        },
         "definition": "",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Application",
@@ -3462,16 +3567,16 @@
       },
       {
         "allFormat": "glob",
-        "allValue": null,
         "current": {
           "selected": false,
           "text": "app:8080",
           "value": "app:8080"
         },
-        "datasource": "prom1",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "6AwMxn_7k"
+        },
         "definition": "",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": false,
         "label": "Instance",
@@ -3494,16 +3599,16 @@
       },
       {
         "allFormat": "glob",
-        "allValue": null,
         "current": {
           "selected": false,
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "prom1",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "6AwMxn_7k"
+        },
         "definition": "",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "JVM Memory Pools Heap",
@@ -3526,16 +3631,16 @@
       },
       {
         "allFormat": "glob",
-        "allValue": null,
         "current": {
           "selected": false,
           "text": "All",
           "value": "$__all"
         },
-        "datasource": "prom1",
+        "datasource": {
+          "type": "prometheus",
+          "uid": "6AwMxn_7k"
+        },
         "definition": "",
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": true,
         "label": "JVM Memory Pools Non-Heap",
@@ -3559,7 +3664,7 @@
     ]
   },
   "time": {
-    "from": "now-15m",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -3591,5 +3696,6 @@
   "timezone": "browser",
   "title": "Spring Boot App",
   "uid": "17kOE7Onk",
-  "version": 1
+  "version": 1,
+  "weekStart": ""
 }

@@ -3,7 +3,10 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -23,17 +26,14 @@
   "fiscalYearStartMonth": 0,
   "gnetId": 2587,
   "graphTooltip": 2,
-  "id": 4,
-  "iteration": 1651516445599,
   "links": [],
   "liveNow": false,
   "panels": [
     {
       "collapsed": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
       },
       "gridPos": {
         "h": 1,
@@ -43,7 +43,15 @@
       },
       "id": 18,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Dashboard Row",
       "type": "row"
     },
@@ -52,7 +60,10 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -82,7 +93,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -93,6 +104,10 @@
       "targets": [
         {
           "alias": "Active VUs",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -110,7 +125,7 @@
           ],
           "measurement": "vus",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -131,9 +146,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Virtual Users",
       "tooltip": {
         "shared": true,
@@ -142,33 +155,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -176,7 +180,10 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -207,7 +214,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -218,6 +225,10 @@
       "targets": [
         {
           "alias": "Requests per Second",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -235,7 +246,7 @@
           ],
           "measurement": "http_reqs",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -256,9 +267,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Requests per Second",
       "tooltip": {
         "shared": true,
@@ -267,33 +276,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -301,7 +301,10 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -331,7 +334,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -347,6 +350,10 @@
       "targets": [
         {
           "alias": "Num Errors",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -364,7 +371,7 @@
           ],
           "measurement": "errors",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "refId": "C",
           "resultFormat": "time_series",
           "select": [
@@ -385,9 +392,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Errors Per Second",
       "tooltip": {
         "shared": true,
@@ -396,33 +401,24 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
@@ -430,7 +426,10 @@
       "bars": true,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
@@ -460,7 +459,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -476,6 +475,10 @@
       "targets": [
         {
           "alias": "$tag_check",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -499,7 +502,7 @@
           ],
           "measurement": "checks",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "refId": "C",
           "resultFormat": "time_series",
           "select": [
@@ -520,9 +523,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "Checks Per Second",
       "tooltip": {
         "shared": true,
@@ -531,41 +532,31 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "none",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
       "collapsed": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
       },
       "gridPos": {
         "h": 1,
@@ -576,12 +567,23 @@
       "id": 19,
       "panels": [],
       "repeat": "Measurement",
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "$Measurement",
       "type": "row"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -623,7 +625,6 @@
         "y": 9
       },
       "id": 11,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -641,9 +642,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -660,7 +665,7 @@
             }
           ],
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT mean(\"value\") FROM $Measurement WHERE $timeFilter ",
           "rawQuery": true,
           "refId": "A",
@@ -686,8 +691,10 @@
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -729,7 +736,6 @@
         "y": 9
       },
       "id": 14,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -747,9 +753,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -766,7 +776,7 @@
             }
           ],
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT max(\"value\") FROM $Measurement WHERE $timeFilter",
           "rawQuery": true,
           "refId": "A",
@@ -792,8 +802,10 @@
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -835,7 +847,6 @@
         "y": 9
       },
       "id": 15,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -853,9 +864,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -872,7 +887,7 @@
             }
           ],
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT median(\"value\") FROM $Measurement WHERE $timeFilter",
           "rawQuery": true,
           "refId": "A",
@@ -898,8 +913,10 @@
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -941,7 +958,6 @@
         "y": 9
       },
       "id": 16,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -959,9 +975,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -978,7 +998,7 @@
             }
           ],
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT min(\"value\") FROM $Measurement WHERE $timeFilter and value > 0",
           "rawQuery": true,
           "refId": "A",
@@ -1004,8 +1024,10 @@
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1047,7 +1069,6 @@
         "y": 9
       },
       "id": 12,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -1065,9 +1086,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1084,7 +1109,7 @@
             }
           ],
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT percentile(\"value\", 90) FROM $Measurement WHERE $timeFilter",
           "rawQuery": true,
           "refId": "A",
@@ -1110,8 +1135,10 @@
       "type": "stat"
     },
     {
-      "cacheTimeout": null,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "fieldConfig": {
         "defaults": {
           "color": {
@@ -1153,7 +1180,6 @@
         "y": 9
       },
       "id": 13,
-      "interval": null,
       "links": [],
       "maxDataPoints": 100,
       "options": {
@@ -1171,9 +1197,13 @@
         "text": {},
         "textMode": "auto"
       },
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1190,7 +1220,7 @@
             }
           ],
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT percentile(\"value\", 95) FROM $Measurement WHERE $timeFilter ",
           "rawQuery": true,
           "refId": "A",
@@ -1220,7 +1250,10 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
       "description": "Grouped by 1 sec intervals",
       "fill": 1,
       "fillGradient": 0,
@@ -1252,7 +1285,7 @@
         "alertThreshold": true
       },
       "percentage": false,
-      "pluginVersion": "8.2.0",
+      "pluginVersion": "9.5.0",
       "pointradius": 5,
       "points": false,
       "renderer": "flot",
@@ -1263,6 +1296,10 @@
       "targets": [
         {
           "alias": "max",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1280,7 +1317,7 @@
           ],
           "measurement": "/^$Measurement$/",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT max(\"value\") FROM /^$Measurement$/ WHERE $timeFilter and value > 0 GROUP BY time($__interval) fill(none)",
           "rawQuery": true,
           "refId": "C",
@@ -1303,6 +1340,10 @@
         },
         {
           "alias": "p95",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1320,7 +1361,7 @@
           ],
           "measurement": "/^$Measurement$/",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT percentile(\"value\", 95) FROM /^$Measurement$/ WHERE $timeFilter and value > 0 GROUP BY time($__interval) fill(none)",
           "rawQuery": true,
           "refId": "D",
@@ -1345,6 +1386,10 @@
         },
         {
           "alias": "p90",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1362,7 +1407,7 @@
           ],
           "measurement": "/^$Measurement$/",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT percentile(\"value\", 90) FROM /^$Measurement$/ WHERE $timeFilter and value > 0 GROUP BY time($__interval) fill(none)",
           "rawQuery": true,
           "refId": "A",
@@ -1387,6 +1432,10 @@
         },
         {
           "alias": "min",
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1404,7 +1453,7 @@
           ],
           "measurement": "/^$Measurement$/",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT min(\"value\") FROM /^$Measurement$/ WHERE $timeFilter and value > 0 GROUP BY time($__interval) fill(none)",
           "rawQuery": true,
           "refId": "E",
@@ -1427,9 +1476,7 @@
         }
       ],
       "thresholds": [],
-      "timeFrom": null,
       "timeRegions": [],
-      "timeShift": null,
       "title": "$Measurement (over time)",
       "tooltip": {
         "shared": true,
@@ -1438,40 +1485,28 @@
       },
       "type": "graph",
       "xaxis": {
-        "buckets": null,
         "mode": "time",
-        "name": null,
         "show": true,
         "values": []
       },
       "yaxes": [
         {
           "format": "ms",
-          "label": null,
           "logBase": 2,
-          "max": null,
-          "min": null,
           "show": true
         },
         {
           "format": "short",
-          "label": null,
           "logBase": 1,
-          "max": null,
-          "min": null,
           "show": true
         }
       ],
       "yaxis": {
-        "align": false,
-        "alignLevel": null
+        "align": false
       }
     },
     {
-      "cards": {
-        "cardPadding": null,
-        "cardRound": null
-      },
+      "cards": {},
       "color": {
         "cardColor": "rgb(0, 234, 255)",
         "colorScale": "sqrt",
@@ -1480,7 +1515,25 @@
         "mode": "spectrum"
       },
       "dataFormat": "timeseries",
-      "datasource": "InfluxDB",
+      "datasource": {
+        "type": "influxdb",
+        "uid": "P951FEA4DE68E13C5"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "scaleDistribution": {
+              "type": "linear"
+            }
+          }
+        },
+        "overrides": []
+      },
       "gridPos": {
         "h": 7,
         "w": 12,
@@ -1497,9 +1550,59 @@
         "show": false
       },
       "links": [],
+      "options": {
+        "calculate": true,
+        "calculation": {
+          "yBuckets": {
+            "mode": "count",
+            "scale": {
+              "log": 2,
+              "type": "log"
+            }
+          }
+        },
+        "cellGap": 2,
+        "cellValues": {},
+        "color": {
+          "exponent": 0.5,
+          "fill": "rgb(0, 234, 255)",
+          "mode": "scheme",
+          "reverse": false,
+          "scale": "exponential",
+          "scheme": "RdYlGn",
+          "steps": 128
+        },
+        "exemplars": {
+          "color": "rgba(255,0,255,0.7)"
+        },
+        "filterValues": {
+          "le": 1e-9
+        },
+        "legend": {
+          "show": false
+        },
+        "rowsFrame": {
+          "layout": "auto"
+        },
+        "showValue": "never",
+        "tooltip": {
+          "show": true,
+          "yHistogram": true
+        },
+        "yAxis": {
+          "axisPlacement": "left",
+          "reverse": false,
+          "unit": "ms"
+        }
+      },
+      "pluginVersion": "9.5.0",
       "reverseYBuckets": false,
       "targets": [
         {
+          "datasource": {
+            "type": "influxdb",
+            "uid": "P951FEA4DE68E13C5"
+          },
           "dsType": "influxdb",
           "groupBy": [
             {
@@ -1517,7 +1620,7 @@
           ],
           "measurement": "http_req_duration",
           "orderByTime": "ASC",
-          "policy": "default",
+          "policy": "autogen",
           "query": "SELECT \"value\" FROM $Measurement WHERE $timeFilter and value > 0",
           "rawQuery": true,
           "refId": "A",
@@ -1544,83 +1647,77 @@
         "show": true,
         "showHistogram": true
       },
-      "tooltipDecimals": null,
       "type": "heatmap",
       "xAxis": {
         "show": true
       },
-      "xBucketNumber": null,
-      "xBucketSize": null,
       "yAxis": {
-        "decimals": null,
         "format": "ms",
         "logBase": 2,
-        "max": null,
-        "min": null,
-        "show": true,
-        "splitFactor": null
+        "show": true
       },
-      "yBucketBound": "auto",
-      "yBucketNumber": null,
-      "yBucketSize": null
+      "yBucketBound": "auto"
     },
     {
       "collapsed": false,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {},
-        "overrides": []
+      "datasource": {
+        "type": "prometheus",
+        "uid": "6AwMxn_7k"
       },
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 85
       },
       "id": 20,
       "panels": [],
-      "repeat": null,
+      "targets": [
+        {
+          "datasource": {
+            "type": "prometheus",
+            "uid": "6AwMxn_7k"
+          },
+          "refId": "A"
+        }
+      ],
       "title": "Dashboard Row",
       "type": "row"
     }
   ],
   "refresh": "5s",
-  "schemaVersion": 31,
+  "schemaVersion": 38,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "allValue": null,
         "current": {
           "selected": true,
-          "tags": [],
-          "text": "http_req_duration + http_req_blocked",
+          "text": [
+            "All"
+          ],
           "value": [
-            "http_req_duration",
-            "http_req_blocked"
+            "$__all"
           ]
         },
-        "description": null,
-        "error": null,
         "hide": 0,
         "includeAll": true,
-        "label": null,
         "multi": true,
         "name": "Measurement",
         "options": [
           {
-            "selected": false,
+            "selected": true,
             "text": "All",
             "value": "$__all"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "http_req_duration",
             "value": "http_req_duration"
           },
           {
-            "selected": true,
+            "selected": false,
             "text": "http_req_blocked",
             "value": "http_req_blocked"
           },
@@ -1651,13 +1748,14 @@
           }
         ],
         "query": "http_req_duration,http_req_blocked,http_req_connecting,http_req_looking_up,http_req_receiving,http_req_sending,http_req_waiting",
+        "queryValue": "",
         "skipUrlSync": false,
         "type": "custom"
       }
     ]
   },
   "time": {
-    "from": "now-1h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
@@ -1688,5 +1786,6 @@
   "timezone": "browser",
   "title": "k6 Load Testing Results",
   "uid": "Jupmw7_nz",
-  "version": 2
+  "version": 1,
+  "weekStart": ""
 }
