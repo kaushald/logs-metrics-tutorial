@@ -1,4 +1,4 @@
 #docker-compose down
-./gradlew assemble
+#./gradlew assemble
 docker-compose build
 docker compose up
